@@ -12,6 +12,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
+setopt GLOB_DOTS
 setopt hist_reduce_blanks
 setopt inc_append_history
 setopt share_history
@@ -41,6 +42,24 @@ RPROMPT='%{$fg[magenta]%}$(git_prompt) %{$reset_color%}'
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+
+git() {
+    # color conventional commit types
+    if [[ "$1" == "log" ]]; then
+        shift
+        command git log --color=always "$@" | sed -E \
+            -e "s/(^|[[:space:]])feat:/\1\x1b[32mfeat\x1b[0m:/g" \
+            -e "s/(^|[[:space:]])fix:/\1\x1b[31mfix\x1b[0m:/g" \
+            -e "s/(^|[[:space:]])docs:/\1\x1b[34mdocs\x1b[0m:/g" \
+            -e "s/(^|[[:space:]])refactor:/\1\x1b[35mrefactor\x1b[0m:/g" \
+            -e "s/(^|[[:space:]])test:/\1\x1b[33mtest\x1b[0m:/g" \
+            -e "s/(^|[[:space:]])chore:/\1\x1b[36mchore\x1b[0m:/g" \
+            -e "s/(^|[[:space:]])style:/\1\x1b[37mstyle\x1b[0m:/g" \
+            -e "s/(^|[[:space:]])perf:/\1\x1b[91mperf\x1b[0m:/g"
+    else
+        command git "$@"
+    fi
+}
 
 export KEYTIMEOUT=1
 bindkey -v
