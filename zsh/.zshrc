@@ -61,7 +61,24 @@ git() {
     fi
 }
 
-export KEYTIMEOUT=1
 bindkey -v
 bindkey '^F' autosuggest-accept
+
+# tmux support for changing cursor shape based on vi mode
+function zle-keymap-select {
+    if [[ $KEYMAP == vicmd ]]; then
+       printf '\e[2 q'
+    else
+        printf '\e[6 q'
+    fi
+} 
+
+function zle-line-init {
+    printf '\e[6 q'
+}
+
+zle -N zle-keymap-select
+zle -N zle-line-init
+
+export KEYTIMEOUT=1
 export EDITOR='nvim'
