@@ -42,6 +42,7 @@ RPROMPT='%{$fg[magenta]%}$(git_prompt) %{$reset_color%}'
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias ts='tmux-sessionizer'
 
 git() {
     # color conventional commit types
@@ -62,6 +63,7 @@ git() {
 }
 
 bindkey -v
+
 bindkey '^F' autosuggest-accept
 
 # tmux support for changing cursor shape based on vi mode
@@ -80,5 +82,6 @@ function zle-line-init {
 zle -N zle-keymap-select
 zle -N zle-line-init
 
+export PATH="$HOME/.local/bin:$PATH"
 export KEYTIMEOUT=1
 export EDITOR='nvim'

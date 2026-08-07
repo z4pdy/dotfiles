@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+selected_dir=$(
+{
+    find ~/projects -mindepth 2 -maxdepth 2 -type d
+    find ~/.config -mindepth 1 -maxdepth 1 -type l -xtype d
+    find ~/.dotfiles -maxdepth 0
+} | fzf
+)
+
+if [[ -z "$selected_dir" ]]; then
+    exit 0
+fi
+
+selected_relative_dir="${selected_dir#"$HOME/"}"
+session_name="sessionizer_${selected_relative_dir//[\/.]/_}"
+base_index=1
+if ! tmux has-session -t "$session_name" 2>/dev/null; then
+    tmux new-session -d -s "$session_name" -c "$selected_dir"
+    tmux send-keys -t "$session_name:$base_index" "nvim ." Enter
+    tmux new-window -d -t "$session_name" -c "$selected_dir"
+    tmux new-window -d -t "$session_name" -c "$selected_dir"
+
+    tmux select-window -t "$session_name:$base_index"
+fi
+
+
+if [[ -n "$TMUX" ]]; then
+    tmux switch-client -t "$session_name"
+else
+    tmux attach -t "$session_name"
+fi
