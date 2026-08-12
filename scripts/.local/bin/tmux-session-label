@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+path="$1"
+name="$(basename "$path")"
+
+if [[ "$name" == "backend" || "$name" == "frontend" ]]; then
+    echo "$(basename "$(dirname "$path")")/$name"
+else
+    echo "$name"
+fi
