@@ -48,22 +48,22 @@ git() {
     # color conventional commit types
     if [[ "$1" == "log" ]]; then
         shift
-        command git log --color=always "$@" | sed -E \
-            -e "s/(^|[[:space:]])feat:/\1\x1b[32mfeat\x1b[0m:/g" \
-            -e "s/(^|[[:space:]])fix:/\1\x1b[31mfix\x1b[0m:/g" \
-            -e "s/(^|[[:space:]])docs:/\1\x1b[34mdocs\x1b[0m:/g" \
-            -e "s/(^|[[:space:]])refactor:/\1\x1b[35mrefactor\x1b[0m:/g" \
-            -e "s/(^|[[:space:]])test:/\1\x1b[33mtest\x1b[0m:/g" \
-            -e "s/(^|[[:space:]])chore:/\1\x1b[36mchore\x1b[0m:/g" \
-            -e "s/(^|[[:space:]])style:/\1\x1b[37mstyle\x1b[0m:/g" \
-            -e "s/(^|[[:space:]])perf:/\1\x1b[91mperf\x1b[0m:/g"
+        command git log --color=always --decorate=short "$@" | sed -E \
+            -e "s/(^|[[:space:]])feat(\([^)]*\))?:/\1\x1b[32mfeat\2\x1b[0m:/g" \
+            -e "s/(^|[[:space:]])fix(\([^)]*\))?:/\1\x1b[31mfix\2\x1b[0m:/g" \
+            -e "s/(^|[[:space:]])docs(\([^)]*\))?:/\1\x1b[34mdocs\2\x1b[0m:/g" \
+            -e "s/(^|[[:space:]])refactor(\([^)]*\))?:/\1\x1b[35mrefactor\2\x1b[0m:/g" \
+            -e "s/(^|[[:space:]])test(\([^)]*\))?:/\1\x1b[33mtest\2\x1b[0m:/g" \
+            -e "s/(^|[[:space:]])chore(\([^)]*\))?:/\1\x1b[36mchore\2\x1b[0m:/g" \
+            -e "s/(^|[[:space:]])style(\([^)]*\))?:/\1\x1b[37mstyle\2\x1b[0m:/g" \
+            -e "s/(^|[[:space:]])perf(\([^)]*\))?:/\1\x1b[91mperf\2\x1b[0m:/g"
     else
         command git "$@"
     fi
 }
 
 bindkey -v
-
+bindkey -M vicmd ':' undefined-key
 bindkey '^F' autosuggest-accept
 
 # tmux support for changing cursor shape based on vi mode
