@@ -1,3 +1,3 @@
-terminal = "kitty"
-fileManager = "dolphin"
+terminal = "ghostty"
+fileManager = "nautilus"
 menu        = "hyprlauncher"

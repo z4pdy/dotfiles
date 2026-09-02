@@ -1,6 +1,6 @@
 hl.config({
     general = {
-        gaps_in  = 2,
+        gaps_in  = 1,
         gaps_out = 1,
         border_size = 1,
         col = {
@@ -11,8 +11,8 @@ hl.config({
         layout = "dwindle",
     },
     decoration = {
-        rounding       = 4,
-        rounding_power = 2,
+        rounding       = 0,
+        rounding_power = 0,
         shadow = {
             enabled      = true,
             range        = 4,
