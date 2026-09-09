@@ -1,0 +1,82 @@
+* {
+    bg0: #282C34;
+    bg1: #21252B;
+    fg0: #ABB2BF;
+
+    accent-color: #61AFEF;
+    urgent-color: #E06C75;
+    border-color: #5C6370;
+
+    background-color: transparent;
+    text-color: @fg0;
+}
+window {
+    width: 600;
+    background-color: @bg0;
+    border: 2px;
+    border-color: @border-color;
+}
+
+inputbar {
+    spacing: 8px;
+    padding: 8px;
+    background-color: @bg1;
+}
+
+prompt {
+    text-color: @accent-color;
+}
+
+textbox {
+    padding: 8px;
+    background-color: @bg1;
+}
+
+listview {
+    padding: 5px 0;
+    lines: 8;
+    columns: 1;
+    fixed-height: false;
+}
+
+element {
+    padding: 8px;
+    spacing: 10px;
+}
+
+element normal normal {
+    text-color: @fg0;
+}
+
+element normal urgent {
+    text-color: @urgent-color;
+}
+
+element normal active {
+    text-color: @accent-color;
+}
+
+element alternate active {
+    text-color: @accent-color;
+}
+
+element selected {
+    text-color: @bg0;
+}
+
+element selected normal, element selected active {
+    background-color: @accent-color;
+}
+
+element selected urgent {
+    background-color: @urgent-color;
+}
+
+element-icon {
+    size: 1em;
+    margin: 2px 0 0 0;
+}
+
+element-text {
+    text-color: inherit;
+}

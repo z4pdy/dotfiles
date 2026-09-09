@@ -1,0 +1,6 @@
+configuration {
+    show-icons: true;
+    terminal: "ghostty";
+    display-drun: "Applications";
+}
+@theme "theme.rasi"

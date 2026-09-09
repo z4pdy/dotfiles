@@ -1,3 +1,3 @@
 terminal = "ghostty"
 fileManager = "nautilus"
-menu        = "hyprlauncher"
+menu        = "rofi -show drun"
