@@ -1,0 +1,56 @@
+window {
+  font-family: "JetBrainsMono Nerd Font Mono";
+  font-size: 15px;
+}
+
+window#waybar {
+  background-color: #111111;
+  color: #dddddd;
+}
+
+button {
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background-color: transparent;
+  color: #555555;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+#workspaces button:hover {
+  background: inherit; 
+}
+
+#workspaces button.focused, #workspaces button.active {
+  color: #dddddd;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#clock {
+  padding: 6px 10px;
+}
+
+#bluetooth,
+#network {
+  padding: 0px 10px;
+}
+
+#network {
+  font-size: 22px;
+}
+
+#bluetooth {
+  font-size: 17px;
+}
+
+widget:first-child > #workspaces {
+  margin-left: 0;
+}
