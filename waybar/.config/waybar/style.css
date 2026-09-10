@@ -24,6 +24,7 @@ button {
 
 #workspaces button:hover {
   background: inherit; 
+  text-shadow: none;
 }
 
 #workspaces button.focused, #workspaces button.active {
@@ -31,7 +32,7 @@ button {
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  color: #eb4d4b;
 }
 
 #clock {
