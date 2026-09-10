@@ -4,3 +4,6 @@ theme = Atom One Dark
 working-directory = "home"
 window-inherit-working-directory = false
 cursor-style-blink = false
+confirm-close-surface = false
+selection-foreground = cell-foreground
+selection-background = #323844
