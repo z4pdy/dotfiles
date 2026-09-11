@@ -9,3 +9,4 @@ chmod +x scripts/.local/bin/*
 
 waybar:
 yay -S rofi-bluetooth-git
+yay -S networkmanager-dmenu
