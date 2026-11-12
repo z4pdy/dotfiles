@@ -1,5 +1,6 @@
 hl.config({
     general = {
+        extend_border_grab_area = 0,
         gaps_in  = 1,
         gaps_out = 1,
         border_size = 1,
@@ -12,7 +13,7 @@ hl.config({
     },
     decoration = {
         rounding       = 0,
-        rounding_power = 0,
+        rounding_power = 1,
         shadow = {
             enabled      = true,
             range        = 4,
@@ -58,6 +59,6 @@ hl.config({
     misc = {
         force_default_wallpaper = 1,
         disable_hyprland_logo   = true,
-	disable_splash_rendering = true
+        disable_splash_rendering = true
     },
 })
