@@ -83,5 +83,6 @@ zle -N zle-keymap-select
 zle -N zle-line-init
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/share/dotfiles/bin:$PATH"
 export KEYTIMEOUT=1
 export EDITOR='nvim'
