@@ -37,7 +37,7 @@ sync_history() {
 }
 add-zsh-hook precmd sync_history
 
-PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}\$ "
+PROMPT=" %{$fg[yellow]%}%~ %{$reset_color%}\$ "
 RPROMPT='%{$fg[magenta]%}$(git_prompt) %{$reset_color%}'
 
 alias ls='ls --color=auto'
