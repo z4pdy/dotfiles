@@ -1,6 +1,6 @@
 hl.config({
     general = {
-        extend_border_grab_area = 0,
+        extend_border_grab_area = 1,
         gaps_in  = 1,
         gaps_out = 1,
         border_size = 1,
