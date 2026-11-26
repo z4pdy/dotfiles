@@ -10,6 +10,9 @@
         "bluetooth",
         "clock"
     ],
+    "hyprland/workspaces": {
+        "tooltip": false
+    },
     "network": {
         "interface": "wlp7s0",
         "format-ethernet": "",

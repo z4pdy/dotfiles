@@ -15,6 +15,11 @@ button {
 }
 
 #workspaces button {
+  transition: none;
+  transition-property: none;
+}
+
+#workspaces button {
   padding: 0 5px;
   background-color: transparent;
   color: #555555;
