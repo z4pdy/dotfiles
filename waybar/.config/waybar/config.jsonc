@@ -14,7 +14,7 @@
         "tooltip": false
     },
     "network": {
-        "interface": "wlp7s0",
+        "interface": "wlp*",
         "format-ethernet": "",
         "format-wifi": "{icon}",
         "format-linked": "󰤫",
